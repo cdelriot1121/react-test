@@ -4,14 +4,15 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 
-function HolaReact() {
+function HolaReact(props) {  //propiedades para pedir el nombre
   return (
     <div>
-      <h1>Hola React usando Vite</h1>
-      <p>Esta es mi primera aplicacion de React LOL</p>
+      <h1>¡Hola, {props.nombre}!</h1>
+      <p>Esta es mi primera aplicación con React y Vite.</p>
     </div>
   );
 }
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,7 +34,7 @@ function App() {
         </button>
       </div>
       {}
-      <HolaReact />
+      <HolaReact nombre="Cualquier persona" />
     </>
   );
 }
