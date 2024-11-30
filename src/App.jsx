@@ -3,19 +3,46 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 
-
-function HolaReact(props) {  //propiedades para pedir el nombre
+function HolaReact({ nombre }) {
   return (
     <div>
-      <h1>¡Hola, {props.nombre}!</h1>
+      <h1>¡Hola, {nombre}!</h1>
       <p>Esta es mi primera aplicación con React y Vite.</p>
     </div>
   );
 }
 
+function PedirNombre({ onNombreSubmit }) {
+  const [nombre, setNombre] = useState(''); 
+
+  const handleChange = (event) => {
+    setNombre(event.target.value); 
+  };
+
+  const handleSubmit = () => {
+    onNombreSubmit(nombre); 
+  };
+
+  return (
+    <div className="contenedor-nombre">
+      <input
+        type="text"
+        placeholder="Digite su nombre"
+        value={nombre}
+        onChange={handleChange}
+        className="input-nombre"
+      />
+      <button onClick={handleSubmit}>Enviar</button>
+    </div>
+  );
+}
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [nombre, setNombre] = useState('');
+
+  const handleNombreSubmit = (nombre) => {
+    setNombre(nombre);
+  };
 
   return (
     <>
@@ -27,14 +54,12 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      {}
-      <HolaReact nombre="Cualquier persona" />
+      <h1>Vite + React test</h1>
+      
+      <h2>Pedir nombre</h2>
+      <PedirNombre onNombreSubmit={handleNombreSubmit} />
+      
+      <HolaReact nombre={nombre} /> {}
     </>
   );
 }
