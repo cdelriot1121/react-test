@@ -5,6 +5,69 @@
   text-align: center;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+
+.contenedor-nombre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.input-nombre {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+.input-nombre:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.logo {
+  width: 100px;
+  margin: 10px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
